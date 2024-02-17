@@ -2,24 +2,29 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
-	fmt.Print("Hello World\n")
-	const inflamationRate float64 = 2.5
-	var investmentValue float64
-	var years float64
-	var expectedReturnRate float64
-	fmt.Print("Investment Value :")
-	fmt.Scan(&investmentValue)
+	fmt.Print("Profit Calculator\n")
 
-	fmt.Print("Years :")
-	fmt.Scan(&years)
-	fmt.Print("Expected Return Rate :")
-	fmt.Scan(&expectedReturnRate)
-	futurevalue := investmentValue * math.Pow(1+expectedReturnRate/100, years)
-	futureRealValue := futurevalue / math.Pow(1+inflamationRate/100, years)
-	fmt.Println(futurevalue)
-	fmt.Println(futureRealValue)
+	var earning float64
+	var expenses float64
+	var taxRate float64
+	fmt.Print("Earnings Value :")
+	fmt.Scan(&earning)
+
+	fmt.Print("Expenses :")
+	fmt.Scan(&expenses)
+	fmt.Print("Tax Rate :")
+	fmt.Scan(&taxRate)
+	fmt.Print("Earning beforer  Tax: ", earning-expenses, "\n")
+	profit := (earning - expenses) * (1 - taxRate/100)
+	fmt.Printf("Net Profit : %.2f", profit)
+	fmt.Printf("\nRatio : %.2f", (earning-expenses)/profit)
+
+	formattedFv := fmt.Sprintf("\nRatio: %.1f\n", (earning-expenses)/profit)
+	formattedFvs := fmt.Sprintf(`Other way
+	 formatted String Ratio: %.1f`, (earning-expenses)/profit)
+	fmt.Print(formattedFv, " and ", formattedFvs)
+
 }

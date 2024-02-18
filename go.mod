@@ -1,3 +1,3 @@
-module example.com/main
+module example.com/bank
 
 go 1.22.0

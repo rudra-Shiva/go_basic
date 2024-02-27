@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	var accountBalance = 1000.0
 	// for i := 0; i < 2; i++ {
-	for {
+	for { //enfinity  loop
 		fmt.Println("Welcome to Rudra Bank")
 		fmt.Println("What do you want to do")
 		fmt.Println("1. Check balance")
